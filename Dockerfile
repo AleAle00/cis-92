@@ -4,5 +4,5 @@ RUN pip install django
 
 COPY mysite /mysite
 WORKDIR /mysite
-EXPOSE 8000
-CMD python ./manage.py runserver 0.0.0.0:8000
+ENV PORT=8080
+CMD python ./manage.py runserver 0.0.0.0:$PORT
