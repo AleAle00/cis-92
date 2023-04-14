@@ -1,0 +1,2 @@
+#ignore SQLite database from your container
+mysite/db.sqlite3

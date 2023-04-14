@@ -1,0 +1,2 @@
+#remove dbsqlite3 
+git rm mysite/db.sqlite3
