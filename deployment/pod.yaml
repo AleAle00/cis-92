@@ -7,9 +7,21 @@ metadata:
 spec:
   containers:
   - name: httpd
-    image: ghcr.io/aleale00/cis-92:milestone-4.0.1
+    image: ghcr.io/aleale00/cis-92:milestone-6.0
     ports:
     - containerPort: 80
+    livenessProbe:
+        httpGet:
+          path: /polls/
+          port: 8080
     env:
-        - name: SECRET_KEY
-          value: "fdgdfgfdg"
+      - name: SECRET_KEY
+        value: "fdgdfgfdg"
+      - name: DB_NAME
+        value: "mysite"
+      - name: DB_USER
+        value: "postgres"
+      - name: DB_PASSWORD
+        value: "django"
+      - name: DB_HOST
+        value: "postgres"
