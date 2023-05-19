@@ -9,7 +9,7 @@ spec:
   - name: httpd
     image: ghcr.io/aleale00/cis-92:milestone-6.0
     ports:
-    - containerPort: 80
+    - containerPort: 8080
     livenessProbe:
         httpGet:
           path: /polls/
@@ -25,3 +25,5 @@ spec:
         value: "django"
       - name: DB_HOST
         value: "postgres"
+      - name: PORT
+        value: "8080"
